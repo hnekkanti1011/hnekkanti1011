@@ -1,68 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshita Nekkanti - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshita Nekkanti Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      background-color: #333;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #4CAF50;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .project {
+      margin-bottom: 3rem;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #333;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill {
+      background-color: #4CAF50;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 20px;
+      font-size: 1rem;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+    .back-to-top:hover {
+      background-color: #333;
+    }
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 1.5rem;
+    }
+    .contact-buttons a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-    <header class="bg-dark text-white text-center py-4">
-        <h1>Harshita Nekkanti</h1>
-        <p>Full Stack .NET Developer | Cloud Enthusiast | Agile Practitioner</p>
-    </header>
+  <header>
+    <h1>Harshita Nekkanti</h1>
+    <p>Full Stack .NET Developer | Cloud Enthusiast | Agile Practitioner</p>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a Full Stack Developer with over 8 years of experience building scalable, secure software solutions across industries.
+      I specialize in designing robust APIs, developing dynamic front-end applications, and implementing cloud-first architectures.
+    </p>
+    <button onclick="alert('Thank you for visiting my portfolio!')">Learn More</button>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Inventory Management System (IMS)</h3>
+      <p>A robust system for streamlining inventory and supply chain operations.</p>
+      <ul>
+        <li>Technologies: C#, ASP.NET Core, React.js, Azure Services, Docker, Kubernetes</li>
+        <li><a href="https://github.com/hnekkanti1011/IMS" target="_blank">View Repository</a></li>
+      </ul>
+      <button onclick="window.open('https://github.com/hnekkanti1011/IMS', '_blank')">View Details</button>
+    </div>
+    <div class="project">
+      <h3>Energy Management System (EMS)</h3>
+      <p>An innovative platform optimizing energy distribution and monitoring grid performance.</p>
+      <ul>
+        <li>Technologies: Blazor, ASP.NET Core, Azure Kubernetes Service, MongoDB</li>
+        <li><a href="https://github.com/hnekkanti1011/EMS" target="_blank">View Repository</a></li>
+      </ul>
+      <button onclick="window.open('https://github.com/hnekkanti1011/EMS', '_blank')">View Details</button>
+    </div>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill">C#</span>
+      <span class="skill">.NET Core/Framework</span>
+      <span class="skill">React.js</span>
+      <span class="skill">Angular</span>
+      <span class="skill">Blazor</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Azure</span>
+      <span class="skill">AWS</span>
+      <span class="skill">Docker</span>
+      <span class="skill">Kubernetes</span>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:hnekkanti10@gmail.com">hnekkanti10@gmail.com</a></p>
+    <p>Location: Saint Louis, MO</p>
+    <p>GitHub: <a href="https://github.com/hnekkanti1011" target="_blank">https://github.com/hnekkanti1011</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/hnekkanti" target="_blank">https://linkedin.com/in/hnekkanti</a></p>
+    <div class="contact-buttons">
+      <a href="mailto:hnekkanti10@gmail.com"><button>Email Me</button></a>
+      <a href="https://linkedin.com/in/hnekkanti" target="_blank"><button>Connect on LinkedIn</button></a>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Harshita Nekkanti</p>
+  </footer>
+  <button class="back-to-top" onclick="scrollToTop()">↑</button>
+  <script>
+    // Show "Back to Top" button when scrolling
+    const backToTopButton = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
 
-    <main class="container my-5">
-        <section id="about" class="mb-5">
-            <h2>About Me</h2>
-            <p>
-               I am a skilled Full Stack .NET Developer with over 8 years of experience in building scalable, secure, and user-focused applications. Proficient in technologies like ASP.NET Core, React.js, Blazor, and Entity Framework Core, I specialize in developing robust APIs, microservices, and responsive front-end solutions. With expertise in Azure and AWS, I create cloud-native applications that drive business success. 
-            </p>
-        </section>
-
-        <section id="skills" class="mb-5">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Programming Languages:</strong> C#, JavaScript (ES6+), TypeScript, SQL, HTML5, CSS3</li>
-                <li><strong>Frameworks & Technologies:</strong> .NET Core/Framework, ASP.NET MVC, Blazor, React.js, Angular, Entity Framework Core, Dapper</li>
-                <li><strong>Cloud & DevOps:</strong> Microsoft Azure, AWS, Azure DevOps, GitHub Actions, Jenkins, Docker, Kubernetes</li>
-                <li><strong>Databases:</strong> SQL Server, MySQL, PostgreSQL, MongoDB, Oracle</li>
-                <li><strong>Messaging & Event Streaming:</strong> RabbitMQ, Azure Service Bus, Apache Kafka, SignalR</li>
-            </ul>
-        </section>
-
-        <section id="projects" class="mb-5">
-            <h2>Featured Projects</h2>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Inventory Management System (IMS)</h3>
-                    <p class="card-text">A robust system for streamlining inventory and supply chain operations.</p>
-                    <p><strong>Technologies:</strong> C#, ASP.NET Core, React.js, Azure Services, Docker, Kubernetes</p>
-                    <a href="https://github.com/hnekkanti1011/IMS" class="btn btn-primary">View Repository</a>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-body">
-                    <h3 class="card-title">Energy Management System (EMS)</h3>
-                    <p class="card-text">An innovative platform optimizing energy distribution and monitoring grid performance.</p>
-                    <p><strong>Technologies:</strong> Blazor, ASP.NET Core, Azure Kubernetes Service, MongoDB</p>
-                    <a href="https://github.com/hnekkanti1011/EMS" class="btn btn-primary">View Repository</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="mb-5">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:hnekkanti10@gmail.com">hnekkanti10@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/hnekkanti" target="_blank">linkedin.com/in/hnekkanti</a></p>
-            <p>Portfolio: <a href="https://hnekkanti1011.github.io/" target="_blank">hnekkanti1011.github.io</a></p>
-        </section>
-    </main>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Harshita Nekkanti. All Rights Reserved.</p>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    // Smooth scroll to top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
+
