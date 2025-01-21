@@ -15,102 +15,85 @@
     header {
       background-color: #4CAF50;
       color: white;
-      padding: 2rem 0;
+      padding: 1.5rem 0;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
     nav {
-      text-align: center;
-      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 0.5rem;
+    }
+    nav .dropdown {
+      position: relative;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 1rem;
       font-weight: bold;
       padding: 0.5rem 1rem;
-      border-radius: 5px;
-      background-color: #333;
       transition: background-color 0.3s ease;
     }
     nav a:hover {
-      background-color: #4CAF50;
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+    nav .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      margin-top: 0.5rem;
+      z-index: 1;
+      min-width: 150px;
+    }
+    nav .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: black;
+      text-decoration: none;
+    }
+    nav .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+    nav .dropdown:hover .dropdown-content {
+      display: block;
     }
     section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
+      padding: 2rem;
+      max-width: 900px;
       margin: auto;
-    }
-    .project {
-      margin-bottom: 3rem;
-      border: 1px solid #ddd;
-      padding: 1.5rem;
-      border-radius: 8px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    }
-    button {
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #333;
     }
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       background-color: #333;
       color: white;
       margin-top: 2rem;
     }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skill {
-      background-color: #4CAF50;
-      color: white;
-      padding: 0.7rem 1.2rem;
-      border-radius: 20px;
-      font-size: 1rem;
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.2rem;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      display: none;
-    }
-    .back-to-top:hover {
-      background-color: #333;
-    }
-    .contact-buttons {
+    .contact-icons {
       display: flex;
       justify-content: center;
       gap: 15px;
       margin-top: 1.5rem;
     }
-    .contact-buttons a {
+    .contact-icons a {
+      color: black;
       text-decoration: none;
+    }
+    .contact-icons img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    .contact-icons img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -119,10 +102,15 @@
     <h1>Harshita Nekkanti</h1>
     <p>Full Stack .NET Developer | Cloud Enthusiast | Agile Practitioner</p>
     <nav>
-      <a href="#about">About Me</a>
+      <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <div class="dropdown">
+        <a href="#">More</a>
+        <div class="dropdown-content">
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
     </nav>
   </header>
   <section id="about">
@@ -131,75 +119,41 @@
       I'm a Full Stack Developer with over 8 years of experience building scalable, secure software solutions across industries.
       I specialize in designing robust APIs, developing dynamic front-end applications, and implementing cloud-first architectures.
     </p>
-    <button onclick="alert('Thank you for visiting my portfolio!')">Learn More</button>
   </section>
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project">
-      <h3>Inventory Management System (IMS)</h3>
-      <p>A robust system for streamlining inventory and supply chain operations.</p>
-      <ul>
-        <li>Technologies: C#, ASP.NET Core, React.js, Azure Services, Docker, Kubernetes</li>
-        <li><a href="https://github.com/hnekkanti1011/IMS" target="_blank">View Repository</a></li>
-      </ul>
-      <button onclick="window.open('https://github.com/hnekkanti1011/IMS', '_blank')">View Details</button>
-    </div>
-    <div class="project">
-      <h3>Energy Management System (EMS)</h3>
-      <p>An innovative platform optimizing energy distribution and monitoring grid performance.</p>
-      <ul>
-        <li>Technologies: Blazor, ASP.NET Core, Azure Kubernetes Service, MongoDB</li>
-        <li><a href="https://github.com/hnekkanti1011/EMS" target="_blank">View Repository</a></li>
-      </ul>
-      <button onclick="window.open('https://github.com/hnekkanti1011/EMS', '_blank')">View Details</button>
-    </div>
+    <p>Here are some of my featured projects:</p>
+    <ul>
+      <li><strong>Inventory Management System:</strong> A robust system for streamlining inventory operations.</li>
+      <li><strong>Energy Management System:</strong> An innovative platform for optimizing energy distribution.</li>
+    </ul>
   </section>
   <section id="skills">
     <h2>Skills</h2>
-    <div class="skills">
-      <span class="skill">C#</span>
-      <span class="skill">.NET Core/Framework</span>
-      <span class="skill">React.js</span>
-      <span class="skill">Angular</span>
-      <span class="skill">Blazor</span>
-      <span class="skill">SQL</span>
-      <span class="skill">Azure</span>
-      <span class="skill">AWS</span>
-      <span class="skill">Docker</span>
-      <span class="skill">Kubernetes</span>
-    </div>
+    <p>Key technologies I work with:</p>
+    <ul>
+      <li>C#, .NET Core/Framework, Blazor</li>
+      <li>React.js, Angular, JavaScript, TypeScript</li>
+      <li>Azure, AWS, Docker, Kubernetes</li>
+    </ul>
   </section>
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:hnekkanti10@gmail.com">hnekkanti10@gmail.com</a></p>
-    <p>Location: Saint Louis, MO</p>
-    <p>GitHub: <a href="https://hnekkanti1011.github.io/hnekkanti1011/" target="_blank">https://hnekkanti1011.github.io/hnekkanti1011/</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/hnekkanti" target="_blank">https://linkedin.com/in/hnekkanti</a></p>
-    <div class="contact-buttons">
-      <a href="mailto:hnekkanti10@gmail.com"><button>Email Me</button></a>
-      <a href="https://linkedin.com/in/hnekkanti" target="_blank"><button>Connect on LinkedIn</button></a>
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out via the following platforms:</p>
+    <div class="contact-icons">
+      <a href="https://linkedin.com/in/hnekkanti" target="_blank">
+        <img src="https://img.icons8.com/fluency/48/000000/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/hnekkanti1011" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub">
+      </a>
+      <a href="mailto:hnekkanti10@gmail.com">
+        <img src="https://img.icons8.com/fluency/48/000000/gmail-new.png" alt="Email">
+      </a>
     </div>
   </section>
   <footer>
     <p>&copy; 2025 Harshita Nekkanti</p>
   </footer>
-  <button class="back-to-top" onclick="scrollToTop()">↑</button>
-  <script>
-    // Show "Back to Top" button when scrolling
-    const backToTopButton = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-      } else {
-        backToTopButton.style.display = 'none';
-      }
-    });
-
-    // Smooth scroll to top
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
-
